@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/util/account_tab1.dart';
+import 'package:insta_clone/util/account_tab2.dart';
+import 'package:insta_clone/util/account_tab3.dart';
+import 'package:insta_clone/util/account_tab4.dart';
 import 'package:insta_clone/util/bubble_stories.dart';
 
 class UserAccount extends StatelessWidget {
@@ -101,8 +105,8 @@ class UserAccount extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Container(
-                          padding: EdgeInsets.all(8),
-                          child: Center(child: Text('Edit Profile'),),
+                          padding: const EdgeInsets.all(8),
+                          child: const Center(child: Text('Edit Profile'),),
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey),
                             borderRadius: BorderRadius.circular(5)
@@ -115,8 +119,8 @@ class UserAccount extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Container(
-                          padding: EdgeInsets.all(8),
-                          child: Center(child: Text('Edit Profile'),),
+                          padding: const EdgeInsets.all(8),
+                          child: const Center(child: Text('Edit Profile'),),
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey),
                               borderRadius: BorderRadius.circular(5)
@@ -129,8 +133,8 @@ class UserAccount extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Container(
-                          padding: EdgeInsets.all(8),
-                          child: Center(child: Text('Edit Profile'),),
+                          padding: const EdgeInsets.all(8),
+                          child: const Center(child: Text('Edit Profile'),),
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey),
                               borderRadius: BorderRadius.circular(5)
@@ -143,8 +147,8 @@ class UserAccount extends StatelessWidget {
               ),
 
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                 child: Row(
                   children: [
                     BubbleStories(text: 'Story 1'),
@@ -152,6 +156,28 @@ class UserAccount extends StatelessWidget {
                     BubbleStories(text: 'Story 3'),
                     BubbleStories(text: 'Story 4'),
                   ],
+                ),
+              ),
+
+
+              const TabBar(
+                  tabs: [
+                    Tab(icon: Icon(Icons.grid_3x3_outlined),),
+                    Tab(icon: Icon(Icons.video_call),),
+                    Tab(icon: Icon(Icons.shop),),
+                    Tab(icon: Icon(Icons.person),),
+                  ]
+              ),
+
+
+              Expanded(
+                child: TabBarView(
+                    children: [
+                      AccountTab1(),
+                      AccountTab2(),
+                      AccountTab3(),
+                      AccountTab4(),
+                    ]
                 ),
               ),
 
